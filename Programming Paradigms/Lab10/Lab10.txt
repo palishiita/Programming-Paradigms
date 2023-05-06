@@ -1,0 +1,29 @@
+1. error: covariant type A occurs in contravariant position in type Sequence[A] of value x
+   Please explain why this error occurs
+- By defining Sequence[+A], we say that class is declared as covariant.
+- The Scala compiler performs some validations when it comes to variance in type parameters.
+- The rule that the append method was breaking is: The variance position of a method parameter is the opposite of the
+  variance position of the enclosing parameter clause.
+- When we define a covariant type you can't use it as an input parameter.
+- Therefore the error occurs as soon as a generic parameter appears as the type of parameter to a method.
+- To fix this error need a lower bound for the type parameter in the method definition.
+- In other words, the type in the method parameter must be a supertype of the covariant type in the class definition.
+  fixed code: 'B' is a super type of 'A'.
+  abstract class Sequence[+A]{
+    def append[B >: A](x: Sequence[B]): Sequence[B]
+  }
+
+3. Explain how covariance and invariance works for Arrays in Java.
+
+- In Java, arrays are covariant.
+- This means given the subtyping rules of Java, an array of type T[] may contain elements of type T or any subtype of T.
+- But not only that, the subtyping rules of Java also state that an array S[] is a subtype of the array T[] if
+  S is a subtype of T.
+- For example, we can use an Object[] as an argument where a String[] is expected, because Object is a supertype of String.
+
+4. Explain how covariance and invariance works for collection in Java
+- In Java, the Collection interface, and it's implementing classes, such as List and Set, are invariant.
+- This means that the type of the elements in the collection cannot be replaced with a supertype or subtype.
+- For example, if we have a List<String>, we can not use it where a List<Object> is expected.
+- Similarly, we cannot use a List<Object> where a List<String> is expected.
+- This invariance ensures type safety, as it prevents from adding elements of the wrong type to the collection.

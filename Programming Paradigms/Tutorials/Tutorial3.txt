@@ -1,0 +1,16 @@
+file:///C:/Users/Nandita/Desktop/computerNetwork/Lab4/ppTut03.pdf
+
+1. Please put operators in priority order +, :, -, <, =!
+   + and -, :, <, =!
+
+  + -
+  :
+  < >
+  = !
+  &
+  ^
+  |
+
+3. Explain how flatMap works: https://www.youtube.com/watch?v=tQzIl5UeETM
+    combination of a map and a flat operation.
+    That means that you first apply a function to your elements, and then flatten it.

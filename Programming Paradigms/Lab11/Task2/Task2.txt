@@ -1,0 +1,7 @@
+Q2. Explain issue which can be observed in the code of task 2.
+- The issue with this code is that the balance variable is being accessed by both threads simultaneously, which can lead
+  to race conditions.
+- A race condition occurs when two or more threads try to access shared resources simultaneously, and the final result
+  depends on the order in which the threads access the resources.
+- In this case, the final balance of the account may not be correct because the income and outcome operations are being
+  interleaved in an unpredictable way.

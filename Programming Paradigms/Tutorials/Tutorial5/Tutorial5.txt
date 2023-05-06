@@ -1,0 +1,44 @@
+----- JAVA OBJECT ORIENTED PROGRAMMING ----
+
+1. What is the difference between multiple and multilevel inheritance? Please provide examples of both (pseudocode)
+- Multiple Inheritance is when a class inherits more than one base class. (2 class level)
+  i.e. child class inherits from 2 parent classes. java does not support multiple Inheritance.
+  pseudocode:
+    public class A {
+       void A { print "A"}
+    }
+    public class B {
+       void B { print "B"}
+    }
+    public class C extends A, B {
+        void C { print "C"}
+    }
+
+- Multilevel Inheritance is when a class inherits from a derived class making that derived class a base class for a
+  new class. (3 class levels)
+  i.e. child class inherits from parent class. parent class inherits from grandparent class
+  pseudocode:
+  public class A {
+     void A { print "A"}
+  }
+  public class B extends A {
+     void B { print "B"}
+  }
+  public class C extends B {
+      void C { print "C"}
+  }
+
+
+2. Please describe differences between overloading and overriding.
+- Overloading occurs when two or more methods in the "same class" have the "same name but different parameters".
+- Overriding occurs when the "method signature is the same" in parent class and child class.
+
+3. What is the difference between default, public, private and protected access modifiers? (Describe access from own
+   class, derived class and other classes.)
+   https://iq.opengenus.org/public-private-protected-in-java/ (explained fully in detail)
+
+4. What is the use of "finalize"?
+- finalize() method is used to perform clean-up processing just before an object is garbage collected
+  and is executed just before the object is destroyed.
+  garbage collector: https://www.youtube.com/watch?v=YvlexZFqFBE
+  finalize(): https://www.youtube.com/watch?v=j3fRK7T1pQo

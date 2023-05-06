@@ -1,0 +1,58 @@
+file:///C:/Users/Nandita/Desktop/computerNetwork/Lab4/ppTut04.pdf
+
+1. What is the difference between sum and product type ADTs in scala?
+- If we need to define a type which can assume different values it is sum type pattern.
+  eg: color is either white or black (we can enumerate all the possible instances of a type)
+  Object-oriented terminology: “is a” relationship
+  A sum type is often defined as Sealed traits, case objects extending class
+
+  example: "Color is White or Black" "Name is Pawn or rook or queen etc..."
+  sealed trait Color
+  final case object White extends Color
+  final case object Black extends Color
+
+  sealed trait Name
+  final case object Pawn extends Name
+  final case object Rook extends Name
+  final case object Knight extends Name
+  final case object Bishop extends Name
+  final case object Queen extends Name
+  final case object King extends Name
+
+  def chooseColor(c: Color): String = c match {
+         case White => "moves first"
+         case _ => "moves next"
+  }
+
+- When we need to model data containing other data we can use the product type pattern.
+  Object-Oriented terminology: “has-a” relationship
+  A product type is often defined as a case class.
+
+  example: "ChessPiece has a Color and a Name"
+  case class ChessPiece(color: Color, name: Name)
+
+  def isTheMostImportantPiece(c: ChessPiece): Boolean = c match {
+     case ChessPiece(_, King) => true
+     case _                   => false
+  }
+
+
+
+5. Explain how operators && and || work?
+   - &&: Logical AND operator. If both the operands are non-zero then condition becomes true.
+   - ||: Logical OR Operator. If any of the two operands is non-zero then condition becomes true.
+
+
+8. Explain the idea of Null Safety (Kotlin) and why it is popular in modern languages?
+  - Kotlin null safety is a procedure to eliminate the risk of null reference from the code.
+  - Kotlin compiler throws NullPointerException immediately if it found any null argument is passed without
+  executing any other statements.
+  - Kotlin's type system is aimed to eliminate NullPointerException form the code.
+
+
+9. Explain the idea of Extension Functions (Kotlin) and how they are implemented on JVM level?
+  - Kotlin gives the programmer the ability to add more functionality to the existing classes,
+    without "inheriting" them.
+  - This is achieved through a feature known as extensions.
+  - When a function is added to an existing class it is known as Extension Function.
+  - https://www.geeksforgeeks.org/kotlin-extension-function/#:~:text=Kotlin%20gives%20the%20programmer%20the,is%20known%20as%20Extension%20Function.

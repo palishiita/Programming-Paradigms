@@ -1,0 +1,58 @@
+Q1) Map ADT: public interface Map<K,V>
+An object that maps keys to values. A map cannot contain duplicate keys; each key can map to at most one value.
+Methods:
+int size(): Returns the number of key-value mappings in this map. If the map contains more than Integer.MAX_VALUE
+            elements, returns Integer.MAX_VALUE.
+boolean isEmpty(): Returns true if this map contains no key-value mappings.
+boolean containsKey(Object key): Returns true if this map contains a mapping for the specified key. More formally,
+                                 returns true if and only if this map contains a mapping for a key k such that
+                                 (key==null ? k==null : key.equals(k)). (There can be at most one such mapping.)
+boolean containsValue(Object value): Returns true if this 'map' maps one or more keys to the specified value.
+                                     More formally, returns true if and only if this map contains at least one mapping
+                                     to a value v such that (value==null ? v==null : value.equals(v)). This operation
+                                     will probably require time linear in the map size for most implementations of the
+                                     Map interface.
+V put(K key, V value): Associates the specified value with the specified key in this map (optional operation).
+                       If the map previously contained a mapping for the key, the old value is replaced by the
+                       specified value. (A map m is said to contain a mapping for a key k if and only if
+                       m.containsKey(k) would return true.)
+
+Q2) Set ADT: public interface Set<E> extends Collection<E>
+A collection that contains no duplicate elements. More formally, sets contain no pair of elements e1 and e2 such that
+e1.equals(e2), and at most one null element. As implied by its name, this interface models the mathematical set abstraction.
+
+Methods:
+boolean	add(E e): Adds the specified element to this set if it is not already present (optional operation). More formally,
+                  adds the specified element e to this set if the set contains no element e2 such that
+                  (e==null ? e2==null : e.equals(e2)). If this set already contains the element, the call leaves the set
+                  unchanged and returns false. In combination with the restriction on constructors, this ensures that
+                  sets never contain duplicate elements.
+void clear(): Removes all of the elements from this set (optional operation).
+boolean	contains(Object o): Returns true if this set contains the specified element.
+boolean isEmpty(): Returns true if this set contains no elements.
+Object[] toArray(): Returns an array containing all of the elements in this set. If this set makes any guarantees as to
+                    what order its elements are returned by its iterator, this method must return the elements in the
+                    same order.
+
+Q3) Compare implementation of ArrayList and LinkedList in Java
+
+ArrayList:
+1) ArrayList internally uses a dynamic array to store the elements.
+2) Manipulation with ArrayList is slow because it internally uses an array.
+   If any element is removed from the array, all the other elements are shifted in memory.
+3) An ArrayList class can act as a list only because it implements List only.
+4) ArrayList is better for storing and accessing data.
+5) The memory location for the elements of an ArrayList is contiguous.
+6) Generally, when an ArrayList is initialized, a default capacity of 10 is assigned to the ArrayList.
+7) ArrayList is a resizable array.
+
+LinkedList:
+1) LinkedList internally uses a doubly linked list to store the elements.
+2) Manipulation with LinkedList is faster than ArrayList because it uses a doubly linked list,
+   so no bit shifting is required in memory.
+3) LinkedList class can act as a list and queue both because it implements List and Deque interfaces.
+4) LinkedList is better for manipulating data.
+5) The location for the elements of a linked list is not contagious.
+6) There is no case of default capacity in a LinkedList.
+   In LinkedList, an empty list is created when a LinkedList is initialized.
+7) LinkedList implements the doubly linked list of the list interface
